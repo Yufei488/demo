@@ -9,4 +9,4 @@ docker rm -f $(docker images | grep ${app_name})
 echo '-----创建镜像-----'
 docker build -f ${docker_file_path} -t ${app_name}:${app_version} .
 echo '-----运行镜像-----'
-docker run -p 8001:8001 --name ${app_name} ${app_name}:${app_version}
+docker run -d -p 8001:8001 --name ${app_name} ${app_name}:${app_version}
